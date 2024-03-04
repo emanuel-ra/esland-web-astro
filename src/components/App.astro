@@ -4,12 +4,16 @@ import Footer from '@/components/Footer.astro';
 import Intro from '@/components/Intro.astro';
 import PreFooter from '@/components/PreFooter.astro';
 import Video from '@/components/Video.astro';
+import { getI18N } from '@/i18n';
 import Layout from '@/layouts/Layout.astro';
+const { currentLocale} = Astro
+const i18n = getI18N({currentLocale});
+
 ---
 
 <Layout
-  title='Premis ESLAND 2024 - Celebrando lo mejor del streaming y los creadores de contenido'
-  description='Descubre a los mejores creadore de contenido de España, Latinoamerica y Andorra. ¡Vota por tus favoritos! Celebra la innovacion y el talento de Twich,Youtube y Mas'
+  title={i18n.SEO_TITLE_1}
+  description={i18n.SEO_DESCRIPTION}
 >
   <Video />
   <main>
